@@ -3,6 +3,7 @@ package com.example.rest.jpa.controllers;
 import com.example.rest.jpa.repository.BookRepository;
 import com.example.rest.jpa.entities.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,9 @@ public class BookController {
           return ResponseEntity.notFound().build();
     }
     @PostMapping("/books")
-    public Book createBook(@RequestBody Book libro){
+    public Book createBook(@RequestBody Book libro, @RequestHeader HttpHeaders headers){
+    //Desde donde estás enviando
+    System.out.println(headers.get("User-Agent"));
     return repository.save(libro);
     }
 
