@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "0e81643f-251d-4d54-ab68-73675e8422fd",
+		"name": "OB Spring Rest Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20114212"
+	},
+	"item": [
+		{
+			"name": "obtener",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"nuevo\",\r\n    \"autor\":\"eo\",\r\n    \"pages\":4546,\r\n    \"price\":15,\r\n    \"releaseDate\":\"2022-02-05\",\r\n    \"online\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\":1,\r\n    \"title\":\"aaaaaaaaaaaaaaaaaa\",\r\n    \"autor\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\r\n    \"pages\":2,\r\n    \"price\":5,\r\n    \"releaseDate\":\"2000-01-01\",\r\n    \"online\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
