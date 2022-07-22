@@ -1,6 +1,10 @@
 package com.example.rest.jpa.controllers;
 
 import com.example.rest.jpa.repository.BookRepository;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 import com.example.rest.jpa.entities.Book;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
@@ -24,12 +28,14 @@ public class BookController {
 	private final Logger log = org.slf4j.LoggerFactory.getLogger(BookController.class);
 
 	@GetMapping("/books")
+	@ApiOperation("Buscar todos los libros existentes")//informacion para el usario en Swagger
 	public List<Book> obtenerLibros() {
 		return repository.findAll();
+		//@ApiIgnore ignora el metodo que queramos
 	}
 
 	@GetMapping("/books/{id}")
-	public ResponseEntity<?> obtenerLibro(@PathVariable Long id) {
+	public ResponseEntity<?> obtenerLibro(@ApiParam("Llave primaria tipo Long")@PathVariable Long id) {
 		Optional<Book> libro = repository.findById(id);
 		if (!libro.isEmpty()) {
 			return ResponseEntity.ok(libro.get());
